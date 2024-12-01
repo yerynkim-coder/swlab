@@ -39,13 +39,16 @@ sudo apt install ros-humble-navigation2 ros-humble-nav2-bringup
 sudo apt install ros-humble-rviz2
 
 *source install/setup.bash : how to make permanent
+
 echo "source /opt/ros/humble/setup.bash" >> ~/.bashrc
 
 *rosdep
+
 sudo rosdep init
 rosdep update
 
 *go1_robot 
+
 ros2 launch go1_gazebo spawn_go1.launch.py
 ros2 run unitree_guide2 junior_ctrl
 ros2 launch go1_navigation navigation.launch.py
@@ -58,6 +61,7 @@ ros2 topic echo /cmd_vel
 ros2 topic info /cmd_vel 
 
 *autonomous nav
+
 ros2 launch go1_gazebo spawn_go1.launch.py
 ros2 launch nav2_bringup navigation_launch.py use_sim_time:=true
 ros2 run unitree_guide2 junior_ctrl 
